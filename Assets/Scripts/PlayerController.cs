@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     private const float Speed = 10f;
     private Rigidbody rigidbody;
+    private Transform transform;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        transform = GetComponent<Transform>();
         Debug.Log("ok");
 
     }
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("w");
             rigidbody.AddForce(transform.forward * Speed, ForceMode.Acceleration);
+            transform.Rotate(Vector3.up,90);
         }
 
         //‰ºˆÚ“®
